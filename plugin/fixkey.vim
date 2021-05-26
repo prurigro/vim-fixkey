@@ -621,6 +621,8 @@ function! Fixkey_detect()
     if $TERM =~# '^xterm\(-\d*color\)\?$'
         if $COLORTERM == "gnome-terminal"
             let termType = "gnome"
+        elseif $COLORTERM == "truecolor"
+            let termType = "unknown"
         else
             let termType = "xterm"
         endif
